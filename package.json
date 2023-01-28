@@ -1,0 +1,58 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "eggjs + vuejs project template",
+  "private": true,
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "dayjs": "^1.11.5",
+    "egg": "^2.0.0",
+    "egg-mysql": "^3.1.1",
+    "egg-router-group": "^1.1.0",
+    "egg-scripts": "^2.1.0",
+    "egg-socket.io": "^4.1.6",
+    "egg-static": "^2.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "jsencrypt": "^3.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "node-rsa": "^1.1.1",
+    "svg-captcha": "^1.4.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.13.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^5.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "build": "pkg . --targets node14-win-x64 --out-path ./dist  --debug",
+    "start": "egg-scripts start --daemon --sticky",
+    "stop": "egg-scripts stop",
+    "dev": "egg-bin dev --sticky",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "deploy-fe": "./deploy-fe.sh"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "yugasun",
+  "license": "MIT"
+}
